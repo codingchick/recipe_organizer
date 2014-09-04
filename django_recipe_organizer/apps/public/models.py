@@ -8,6 +8,8 @@ class Recipe(models.Model):
     ingredients = models.ManyToManyField('Ingredient')
     description = models.TextField()
     instructions = models.TextField()
+    photo = models.CharField(max_length=200, blank=True, null=True)
+
 
     def __unicode__(self):
         return self.name

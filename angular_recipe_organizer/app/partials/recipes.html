@@ -1,0 +1,26 @@
+<div class="container">
+
+    <div ng-repeat="recipe in recipes">
+
+        <h2> {{ recipe.name }}</h2>
+
+        <img src ="{{ recipe.photo }}" width="350 px">
+
+        <p>{{ recipe.description }}</p>
+        <ul>
+             <p ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</p>
+        </ul>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+

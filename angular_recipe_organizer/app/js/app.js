@@ -12,11 +12,24 @@ angular.module('myApp', [
 
 
     ]).
-    config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
-        $routeProvider.when('/view1', {templateUrl: 'partials/partial1.html', controller: 'MyCtrl1'});
-        $routeProvider.when('/view2', {templateUrl: 'partials/partial2.html', controller: 'MyCtrl2'});
-        $routeProvider.otherwise({redirectTo: '/view1'});
+  config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
+        $routeProvider
+            .when('/recipes', {
+                templateUrl: 'partials/recipes.html',
+                controller: 'RecipeCtrl',
+                title: 'Recipe List'
+            })
+
+            .when('/add-recipe', {
+                templateUrl: 'partials/add-recipe.html',
+                controller: 'AddRecipeCtrl',
+                title: 'Add a Recipe'
+            })
+
+            .otherwise({
+                redirectTo: '/recipes'
+            });
+
         RestangularProvider.setBaseUrl('http://localhost:8001');
     }]);
-
 
